@@ -111,7 +111,7 @@ function onSceneLoad(scene) {
       // Load the video element.
       videoElement = document.createElement('video');
       videoElement.src = scene.video;
-      videoElement.loop = true;
+      videoElement.loop = false;
       videoElement.setAttribute('crossorigin', 'anonymous');
       videoElement.addEventListener('canplaythrough', onVideoLoad);
       videoElement.addEventListener('error', onVideoError);
@@ -136,7 +136,7 @@ function onVideoLoad() {
     // Hide loading indicator.
     loadIndicator.hide();
     // Autoplay the video on desktop.
-    videoElement.play();
+    videoElement.play(a);
   } else {
     // Tell user to tap to start.
     showError('Tap to start video', 'Play');
